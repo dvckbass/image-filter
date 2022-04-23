@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Image Filter</title>
+    </head>
+    <body>
+        <h1>Filter Image</h1>
+
+        <canvas id="canvas"></canvas>
+
+        <h3>Load Image</h3>
+        <input type="file" id="fileInput" multiple="no" accept="image/*" />
+
+        <h3>Choose Filter</h3>
+        <p>
+            <input
+                type="button"
+                id="grayscaleButton"
+                value="Grayscale"
+                onclick="makeGrayscale()"
+            />
+            <input
+                type="button"
+                id="redButton"
+                value="Red"
+                onclick="makeRed()"
+            />
+            <input
+                type="button"
+                id="greenButton"
+                value="Green"
+                onclick="makeGreen()"
+            />
+            <input
+                type="button"
+                id="blueButton"
+                value="Blue"
+                onclick="makeBlue()"
+            />
+        </p>
+
+        <script src="script.js"></script>
+    </body>
+</html>
