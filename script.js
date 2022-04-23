@@ -30,7 +30,7 @@ function makeGrayscale() {
  * Apply grayscale filter to the image
  */
 function filterGrayscale() {
-    for (var pixel of originalImage.values()) {
+    for (var pixel of grayscaleImage.values()) {
         var avg = (pixel.getRed() + pixel.getGreen() + pixel.getBlue()) / 3;
         pixel.setRed(avg);
         pixel.setGreen(avg);
@@ -55,7 +55,7 @@ function makeRed() {
  * Apply red filter to the image
  */
 function filterRed() {
-    for (var pixel of originalImage.values()) {
+    for (var pixel of redImage.values()) {
         pixel.setRed(255);
 
         redImage.setPixel(pixel.getX(), pixel.getY(), pixel);
@@ -77,7 +77,7 @@ function makeGreen() {
  * Apply filter green to the image
  */
 function filterGreen() {
-    for (var pixel of originalImage.values()) {
+    for (var pixel of greenImage.values()) {
         pixel.setGreen(255);
         greenImage.setPixel(pixel.getX(), pixel.getY(), pixel);
     }
@@ -98,7 +98,7 @@ function makeBlue() {
  * Apply blue filter to the image
  */
 function filterBlue() {
-    for (var pixel of originalImage.values()) {
+    for (var pixel of blueImage.values()) {
         pixel.setBlue(255);
         blueImage.setPixel(pixel.getX(), pixel.getY(), pixel);
     }
@@ -107,7 +107,9 @@ function filterBlue() {
  * Reset filter applied to the image
  */
 function reset() {
-    alert("Reset");
+    if (isImageLoaded()) {
+        loadImage();
+    }
 }
 
 /**
